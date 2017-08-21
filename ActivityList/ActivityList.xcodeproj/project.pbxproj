@@ -59,6 +59,7 @@
 		88EA50441F4826CA00981C5C /* MyActivityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EA50431F4826CA00981C5C /* MyActivityTableViewController.m */; };
 		88EA50471F48271000981C5C /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EA50461F48271000981C5C /* SignInViewController.m */; };
 		88EA504A1F48274700981C5C /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EA50491F48274700981C5C /* SignUpViewController.m */; };
+		B22A48341F4AC28E00794DB2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B22A48361F4AC28E00794DB2 /* Localizable.strings */; };
 		EB2CAEE25B6CBEBC1D730ACC /* libPods-ActivityList.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0ECF4DB11D46BF4484AEBE /* libPods-ActivityList.a */; };
 /* End PBXBuildFile section */
 
@@ -178,6 +179,7 @@
 		88EA50461F48271000981C5C /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 		88EA50481F48274700981C5C /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		88EA50491F48274700981C5C /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		B22A48351F4AC28E00794DB2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,6 +304,7 @@
 				84CB6D6E1F25DF2100FE6517 /* AppDelegate.m */,
 				84CB6D6B1F25DF2100FE6517 /* main.m */,
 				84CB6DA01F25DF7500FE6517 /* PrefixHeader.pch */,
+				B22A48361F4AC28E00794DB2 /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -592,6 +595,7 @@
 				84CB6D7A1F25DF2100FE6517 /* Assets.xcassets in Resources */,
 				846C9B681F47EB1B002A3F7C /* Cities.plist in Resources */,
 				84CB6D751F25DF2100FE6517 /* Main.storyboard in Resources */,
+				B22A48341F4AC28E00794DB2 /* Localizable.strings in Resources */,
 				849863181F2718F900FA8EA9 /* Detail.storyboard in Resources */,
 				88EA50381F48071300981C5C /* Member.storyboard in Resources */,
 			);
@@ -760,6 +764,14 @@
 				88EA50281F48035400981C5C /* Base */,
 			);
 			name = Issue.storyboard;
+			sourceTree = "<group>";
+		};
+		B22A48361F4AC28E00794DB2 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B22A48351F4AC28E00794DB2 /* Base */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
