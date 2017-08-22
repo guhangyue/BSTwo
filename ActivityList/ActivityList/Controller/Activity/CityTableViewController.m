@@ -280,8 +280,7 @@
                 NSString *cityStr = locDict[@"City"];
                 cityStr = [cityStr substringToIndex:(cityStr.length - 1)];
                 [[StorageMgr singletonStorageMgr] removeObjectForKey:@"LocCity"];
-                
-                //将定位的城市保存进单例化全局变量
+                 //将定位的城市保存进单例化全局变量                                                                                                                                                                                                                                                                                                                   
                 [[StorageMgr singletonStorageMgr]addKey:@"LocCity" andValue:cityStr];
                 //修改城市按钮标题
                 [_cityBtn setTitle:cityStr forState:UIControlStateNormal];
