@@ -9,6 +9,9 @@
 #import "CityTableViewController.h"
 
 @interface CityTableViewController ()
+@property (strong,nonatomic) NSDictionary *cities;
+@property (strong,nonatomic) NSArray *keys;
+- (IBAction)cityAction:(UIButton *)sender forEvent:(UIEvent *)event;
 
 @end
 
@@ -23,6 +26,8 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     [self naviConfig];
+    [self dataInitialize];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,19 +56,71 @@
     [self dismissViewControllerAnimated:YES completion:nil];
     //[self.navigationController popViewControllerAnimated:YES];
 }
-
+-(void)dataInitialize{
+    //创建文件管理器
+    NSFileManager *fileMgr=[NSFileManager defaultManager];
+    //获取要读取的文件的路经
+    NSString *filePath= [[NSBundle mainBundle] pathForResource:@"Cities" ofType:@"plist"];
+    //判断路径下是否存在文件
+    if ([fileMgr fileExistsAtPath:filePath]) {
+        //将文件内容读取为对应的格式
+        NSDictionary *fileContent= [NSDictionary dictionaryWithContentsOfFile:filePath];
+        //判断读取文件是否损坏
+        if (fileContent) {
+            NSLog(@"fileContent = %@",fileContent);
+            _cities =fileContent;
+            //提前字典中所有的键
+            NSArray *rawkeys=[fileContent allKeys];
+            //根据(localizedStandCompare:)（本地化升序）对rawkeys排序
+            _keys = [rawkeys sortedArrayUsingSelector:@selector(localizedStandardCompare:)];
+        }
+    }
+}
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+
+    return _keys.count;
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    //获取当前正在渲染的组的名称
+    NSString *key = _keys[section];
+    //根据组的名称，作为键来查询到对应的值（整个值就是这一组城市对应的城市数组）
+    NSArray *sectionCities = _cities[key];
+    //返回这一组城市的个数来作为行数
+    return sectionCities.count;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CityCell" forIndexPath:indexPath];
+    NSString *key = _keys[indexPath.section];
+    NSArray *sectionCities = _cities[key];
+    NSDictionary*city = sectionCities[indexPath.row];
+    cell.textLabel.text = city[@"name"];
+    return cell;
+
+}
+//设置组的标题文字
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    return _keys[section];
+}
+//设置section header的高度
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 20.f;
 }
 
+//设置cell的高度
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 40.f;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+//设置右侧快捷键栏
+- (NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView{
+    return _keys;
+}
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
@@ -118,4 +175,6 @@
 }
 */
 
+- (IBAction)cityAction:(UIButton *)sender forEvent:(UIEvent *)event {
+}
 @end

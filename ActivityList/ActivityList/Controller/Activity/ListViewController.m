@@ -35,6 +35,7 @@
 
 - (IBAction)favoAction:(UIButton *)sender forEvent:(UIEvent *)event;
 - (IBAction)switchAction:(UIBarButtonItem *)sender;
+@property (weak, nonatomic) IBOutlet UIButton *cityBtn;
 
 
 @end
@@ -73,6 +74,8 @@
 //每次将要离开这个页面的时候
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
+    //关掉开关
+    [_locMgr stopUpdatingLocation];
 }
 
 //每次离开这个页面的时候
@@ -187,6 +190,29 @@
 
 //这个方法专门做数据的处理
 - (void)dataInitialize {
+    BOOL appInit = NO;
+    
+    if ([[Utilities getUserDefaults:@"UserCity"] isKindOfClass:[NSNull class]]) {
+        //说明是第一次打开APP
+        appInit =  YES;
+    }else{
+        if ([Utilities getUserDefaults:@"UserCity"] ==nil) {
+            //也说明是第一次打开APP
+            appInit = YES;
+        }
+    }
+    if (appInit) {
+        //第一次来到APP将默认城市与记忆城市同步
+        NSString *userCity = _cityBtn.titleLabel.text;
+        [Utilities setUserDefaults:@"UserCity" content:userCity];
+    }else{
+        //不是第一次来到APP则将记忆城市与安宁上的城市名反向同步
+        NSString *userCity =[Utilities getUserDefaults:@"UserCity"];
+        [_cityBtn setTitle:userCity forState:UIControlStateNormal];
+        
+    }
+    
+    
     firstVisit = YES;
     isLoading = NO;
     _arr = [NSMutableArray new];
@@ -228,7 +254,7 @@
         //设置接口地址
         NSString *request = @"/event/list";
         //设置接口入参
-        NSDictionary *parameter = @{@"page" : @(page), @"perPage" : @(perPage)};
+        NSDictionary *parameter = @{@"page" : @(page), @"perPage" : @(perPage),@"city": _cityBtn.titleLabel.text};
         //开始请求
         [RequestAPI requestURL:request withParameters:parameter andHeader:nil byMethod:kGet andSerializer:kForm success:^(id responseObject) {
             //成功以后要做的事情，在此处执行
@@ -616,7 +642,25 @@
                 NSLog(@"locDict = %@",locDict);
                 NSString *cityStr = locDict[@"City"];
                 cityStr = [cityStr substringToIndex:(cityStr.length - 1)];
-                
+                if (![cityStr isEqualToString:_cityBtn.titleLabel.text]) {
+                    //当定位到的城市和当前选择到的城市不一样的时候去弹窗询问用户是否切换城市
+                    UIAlertController *alertView =[UIAlertController alertControllerWithTitle:@"提示" message:[NSString stringWithFormat:@"当前定位到城市为%@， 你是否要切换",cityStr] preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction *yesAction = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                        //修改城市按钮标题
+                        [_cityBtn setTitle:cityStr forState:UIControlStateNormal];
+                        //修改用户选择的城市记忆体
+                        [Utilities removeUserDefaults:@"UserCity"];
+                        [Utilities setUserDefaults:@"UserCity" content:cityStr];
+                        //重新执行网络请求
+                        [self networkRequest];
+                    }];
+                    UIAlertAction *noAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+                    [alertView addAction:yesAction];
+                    [alertView addAction:noAction];
+                    [self presentViewController:alertView animated:YES completion:nil];
+
+                    
+                }
             }
         }];
         //关掉开关
