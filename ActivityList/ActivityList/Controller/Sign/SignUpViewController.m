@@ -9,6 +9,13 @@
 #import "SignUpViewController.h"
 
 @interface SignUpViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *nickNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passWordTextField;
+@property (weak, nonatomic) IBOutlet UITextField *confirmPwdTextField;
+@property (weak, nonatomic) IBOutlet UITextField *verificationTextField;
+- (IBAction)clickAction:(UIButton *)sender forEvent:(UIEvent *)event;
+- (IBAction)registerAction:(UIButton *)sender forEvent:(UIEvent *)event;
 
 @end
 
@@ -34,4 +41,9 @@
 }
 */
 
+- (IBAction)clickAction:(UIButton *)sender forEvent:(UIEvent *)event {
+}
+
+- (IBAction)registerAction:(UIButton *)sender forEvent:(UIEvent *)event {
+}
 @end
