@@ -103,7 +103,7 @@
     });
     return imageDownloaded;
 }
-
+//由于过滤所有的异常的方法
 + (NSString *)nullAndNilCheck:(id)target replaceBy:(NSString *)replacement {
     if ([target isKindOfClass:[NSNull class]]) {
         return replacement;

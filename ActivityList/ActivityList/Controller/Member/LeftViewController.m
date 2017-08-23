@@ -7,7 +7,8 @@
 //
 
 #import "LeftViewController.h"
-
+#import "UserModel.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface LeftViewController ()
 
@@ -28,7 +29,32 @@
     // Do any additional setup after loading the view.
     [self uiLayout];
     [self dataInitialize];
+    
 }
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if ([Utilities loginCheck]) {
+        //已登录
+        _loginBtn.hidden=YES;
+        _usernameLbl.hidden=NO;
+        
+        UserModel*user=[[StorageMgr singletonStorageMgr]objectForKey:@"MemberInfo"];
+        
+        [_avatarImgView sd_setImageWithURL:[NSURL URLWithString:user.avatarUrl] placeholderImage:[UIImage imageNamed:@"Avatar"]];
+        _usernameLbl.text=user.nickname;
+    }else{
+        //未登录
+        _loginBtn.hidden=YES;
+        _usernameLbl.hidden=NO;
+        
+        _avatarImgView.image=[UIImage imageNamed:@"Avatar"];
+        _usernameLbl.text = @"游客";
+    }
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -81,10 +107,51 @@
     else{
         return UI_SCREEN_H-500;
         //return UI_SCREEN_H-170-80-50*5;   等于屏幕高度减去500
+        
     }
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.section==0)
+    {
+        if ([Utilities loginCheck]) {
+            switch (indexPath.row)
+            {
+                case 0:
+                {
+                    [self performSegueWithIdentifier:@"Let2MyAct" sender:self];
+                }
+                    break;
+                case 1:
+                {
+                    
+                }
+                    break;
+                case 2:
+                {
+                    
+                }
+                    break;
+                case 3:
+                {
+                    
+                }
+                    break;
+                case 4:
+                {
+                    
+                }
+                    break;
+                default:
+                    break;
+            }
+        }
+    }else{
+        UINavigationController*signNavi=[Utilities getStoryboardInstance:@"Member" byIdentity:@"SignNavi"];
+        [self presentViewController:signNavi animated:YES completion:nil];
+ 
+    }
     
     
 }
@@ -106,6 +173,14 @@
     [self presentViewController:signNavi animated:YES completion:nil];
 
 }
+
 - (IBAction)settingAction:(UIButton *)sender forEvent:(UIEvent *)event {
+    if ([Utilities loginCheck]) {
+        //return 50.f;
+    }else{
+    UINavigationController *signNavi=[Utilities getStoryboardInstance:@"Member" byIdentity:@"SignNavi"];
+    //执行跳转
+    [self presentViewController:signNavi animated:YES completion:nil];
+    }
 }
 @end

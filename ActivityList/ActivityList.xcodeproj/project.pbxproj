@@ -60,6 +60,7 @@
 		88EA50441F4826CA00981C5C /* MyActivityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EA50431F4826CA00981C5C /* MyActivityTableViewController.m */; };
 		88EA50471F48271000981C5C /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EA50461F48271000981C5C /* SignInViewController.m */; };
 		88EA504A1F48274700981C5C /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EA50491F48274700981C5C /* SignUpViewController.m */; };
+		B2B23BF21F4D517D0066B0E4 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B23BF11F4D517D0066B0E4 /* UserModel.m */; };
 		EB2CAEE25B6CBEBC1D730ACC /* libPods-ActivityList.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0ECF4DB11D46BF4484AEBE /* libPods-ActivityList.a */; };
 /* End PBXBuildFile section */
 
@@ -180,6 +181,8 @@
 		88EA50461F48271000981C5C /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 		88EA50481F48274700981C5C /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		88EA50491F48274700981C5C /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		B2B23BF01F4D517D0066B0E4 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
+		B2B23BF11F4D517D0066B0E4 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -361,6 +364,8 @@
 				8498631D1F28615700FA8EA9 /* ActivityModel.m */,
 				846C9B3D1F47E8F1002A3F7C /* Order.h */,
 				846C9B3E1F47E8F1002A3F7C /* Order.m */,
+				B2B23BF01F4D517D0066B0E4 /* UserModel.h */,
+				B2B23BF11F4D517D0066B0E4 /* UserModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -696,6 +701,7 @@
 				846C9B5A1F47E9BF002A3F7C /* MD5DataSigner.m in Sources */,
 				84F2C1BC1F2EF7AE00881CAB /* NSString+Crypt.m in Sources */,
 				84F2C1BF1F2EF7AE00881CAB /* Utilities.m in Sources */,
+				B2B23BF21F4D517D0066B0E4 /* UserModel.m in Sources */,
 				88EA504A1F48274700981C5C /* SignUpViewController.m in Sources */,
 				84CB6D6C1F25DF2100FE6517 /* main.m in Sources */,
 				88EA50411F48266D00981C5C /* LeftViewController.m in Sources */,

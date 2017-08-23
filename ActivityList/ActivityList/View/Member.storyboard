@@ -26,18 +26,27 @@
                                 <rect key="frame" x="50" y="164" width="275" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="bp5-ex-2VD" id="qIJ-wQ-Xdk"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gKU-Yd-fjx">
                                 <rect key="frame" x="50" y="224" width="275" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="bp5-ex-2VD" id="bu0-XO-QKB"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxU-v7-qGV">
                                 <rect key="frame" x="80" y="304" width="215" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="登录"/>
+                                <connections>
+                                    <action selector="signinAction:forEvent:" destination="bp5-ex-2VD" eventType="touchUpInside" id="Y9h-F5-f13"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -54,6 +63,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="登录" id="pHo-ZH-7ra"/>
+                    <connections>
+                        <outlet property="passWordtextword" destination="gKU-Yd-fjx" id="owC-zJ-aNj"/>
+                        <outlet property="userNametextword" destination="261-Fb-KHR" id="EHF-MW-CpW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ErF-8n-Bwe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -229,7 +242,7 @@
                                         <rect key="frame" x="0.0" y="250" width="312" height="27"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jsW-B4-toG" id="ZFW-qC-xjS">
-                                            <rect key="frame" x="0.0" y="0.0" width="313" height="27"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="312" height="27"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -255,6 +268,7 @@
                         <outlet property="loginBtn" destination="GhW-fu-LdH" id="blM-uK-YlY"/>
                         <outlet property="tableView" destination="t9B-Ov-6SJ" id="NHQ-U8-DPy"/>
                         <outlet property="usernameLbl" destination="s5R-yF-Pcw" id="0Ju-4Q-eQW"/>
+                        <segue destination="egG-V8-bxl" kind="show" identifier="Let2MyAct" id="DPQ-qM-MYR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6t3-8J-LJA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -294,6 +308,10 @@
         <scene sceneID="Awv-Sq-JvB">
             <objects>
                 <viewController id="rg7-Z9-e4Z" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tTr-h9-VsD"/>
+                        <viewControllerLayoutGuide type="bottom" id="Q9y-Zw-uGR"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Fcy-3x-zYq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
