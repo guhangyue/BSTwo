@@ -20,6 +20,7 @@
 @property(strong,nonatomic)NSString*credit;
 @property(strong,nonatomic)NSString*avatarUrl;
 @property(strong,nonatomic)NSString*tokenKey;
+@property(strong,nonatomic)NSString*userPwd;
 
 - (id)initWithDictionary: (NSDictionary *)dict;
 

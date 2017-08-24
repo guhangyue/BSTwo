@@ -61,7 +61,6 @@
 		88EA50471F48271000981C5C /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EA50461F48271000981C5C /* SignInViewController.m */; };
 		88EA504A1F48274700981C5C /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EA50491F48274700981C5C /* SignUpViewController.m */; };
 		B2B23BF21F4D517D0066B0E4 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B23BF11F4D517D0066B0E4 /* UserModel.m */; };
-		DE64C4111F4E6D5000A1E899 /* registrationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DE64C4101F4E6D5000A1E899 /* registrationModel.m */; };
 		EB2CAEE25B6CBEBC1D730ACC /* libPods-ActivityList.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E0ECF4DB11D46BF4484AEBE /* libPods-ActivityList.a */; };
 /* End PBXBuildFile section */
 
@@ -184,8 +183,6 @@
 		88EA50491F48274700981C5C /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		B2B23BF01F4D517D0066B0E4 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		B2B23BF11F4D517D0066B0E4 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
-		DE64C40F1F4E6D5000A1E899 /* registrationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = registrationModel.h; sourceTree = "<group>"; };
-		DE64C4101F4E6D5000A1E899 /* registrationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = registrationModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -369,8 +366,6 @@
 				846C9B3E1F47E8F1002A3F7C /* Order.m */,
 				B2B23BF01F4D517D0066B0E4 /* UserModel.h */,
 				B2B23BF11F4D517D0066B0E4 /* UserModel.m */,
-				DE64C40F1F4E6D5000A1E899 /* registrationModel.h */,
-				DE64C4101F4E6D5000A1E899 /* registrationModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -704,7 +699,6 @@
 				84F2C1BA1F2EF7AE00881CAB /* NSDate+Utility.m in Sources */,
 				846C9B571F47E9BF002A3F7C /* base64.m in Sources */,
 				846C9B5A1F47E9BF002A3F7C /* MD5DataSigner.m in Sources */,
-				DE64C4111F4E6D5000A1E899 /* registrationModel.m in Sources */,
 				84F2C1BC1F2EF7AE00881CAB /* NSString+Crypt.m in Sources */,
 				84F2C1BF1F2EF7AE00881CAB /* Utilities.m in Sources */,
 				B2B23BF21F4D517D0066B0E4 /* UserModel.m in Sources */,

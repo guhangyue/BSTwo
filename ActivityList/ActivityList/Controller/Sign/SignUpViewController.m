@@ -8,7 +8,7 @@
 
 
 #import "SignUpViewController.h"
-#import "registrationModel.h"
+#import "UserModel.h"
 @interface SignUpViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *nickNameTextField;
@@ -83,17 +83,17 @@
 }
 -(void)signInWithEncryptPwd:(NSString *)encryptPwd
 {
-    NSDictionary *parameter = @{@"userTel" : _userNameTextField.text, @"userPwd" : _passWordTextField.text,@"nickname": _nickNameTextField.text,@"nums":_verificationTextField.text};
+    NSDictionary *parameter = @{@"memberId" : _userNameTextField.text, @"userPwd" : _passWordTextField.text,@"nickname": _nickNameTextField.text,@"phone":_verificationTextField.text};
     [RequestAPI requestURL:@"/register" withParameters:parameter andHeader:nil byMethod:kPost andSerializer:kJson success:^(id responseObject) {
         [_aiv stopAnimating];
                 NSLog(@"responseObject=%@",responseObject);
         if ([responseObject[@"resultFlag"]integerValue]==8001) {
             NSDictionary *result=responseObject[@"result"];
-            registrationModel *user=[[registrationModel alloc]initWithDictionary:result];
+            UserModel *user=[[UserModel alloc]initWithDictionary:result];
             //将用户获取到的信息打包存储到单例化全局变量
             [[StorageMgr singletonStorageMgr]addKey:@"MemberInfo" andValue:user];
             //单独将用户的ID也存储进去单例化全局变量中来作为用户是否已经登录的判断依据，同时也方便其他所有的页面更快捷的使用用户ID这个参数
-            [[StorageMgr singletonStorageMgr]addKey:@"userTel" andValue:user.userTel];
+            [[StorageMgr singletonStorageMgr]addKey:@"memberId" andValue:user.memberId];
             //如果键盘还开着 就让他收回去
             [self.view endEditing:YES];
             //清空密码输入框的内容
