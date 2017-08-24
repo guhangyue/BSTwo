@@ -55,6 +55,9 @@
                                                         <integer key="value" value="5"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="applyAction:forEvent:" destination="gXu-iz-eed" eventType="touchUpInside" id="v80-Qf-rN2"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.01元" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LhM-En-en0">
                                                 <rect key="frame" x="124" y="14.5" width="85.5" height="32.5"/>
@@ -136,6 +139,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EG2-lA-5s4">
                                         <rect key="frame" x="15" y="428.5" width="146" height="30"/>
                                         <state key="normal" title="联系活动抓捕者：110"/>
+                                        <connections>
+                                            <action selector="callAction:forEvent:" destination="gXu-iz-eed" eventType="touchUpInside" id="bud-Gm-pS9"/>
+                                        </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qd7-M1-u8C">
                                         <rect key="frame" x="0.0" y="463.5" width="375" height="65"/>
@@ -156,8 +162,8 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="犯人辜" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqL-ds-bf5">
-                                                        <rect key="frame" x="30" y="41.5" width="34" height="13.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="报名开始" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqL-ds-bf5">
+                                                        <rect key="frame" x="24.5" y="41.5" width="45" height="13.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -187,8 +193,8 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="犯人卢" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5K8-Ub-Kzg">
-                                                        <rect key="frame" x="30" y="41.5" width="34" height="13.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="报名截止" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5K8-Ub-Kzg">
+                                                        <rect key="frame" x="24.5" y="41.5" width="45" height="13.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -218,7 +224,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="老母猪" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7K-EV-nd7">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="活动中" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7K-EV-nd7">
                                                         <rect key="frame" x="30" y="41.5" width="34" height="13.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -249,8 +255,8 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="警察陈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmS-Rr-rQK">
-                                                        <rect key="frame" x="30" y="41.5" width="34" height="13.5"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="活动结束" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gmS-Rr-rQK">
+                                                        <rect key="frame" x="24.5" y="41.5" width="45" height="13.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -319,6 +325,24 @@
                         </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="activityImgView" destination="PIW-he-5jy" id="v1e-BJ-zgf"/>
+                        <outlet property="addressLbl" destination="dfn-dO-mF0" id="o6n-8O-opc"/>
+                        <outlet property="applyBtn" destination="v0q-SZ-bPS" id="lX8-Dd-V0E"/>
+                        <outlet property="applyDueLbl" destination="2xn-yN-CJA" id="Vjd-T5-7LN"/>
+                        <outlet property="applyDueView" destination="AjB-rh-evC" id="CDj-7b-zXA"/>
+                        <outlet property="applyEndView" destination="Ss5-Tf-HRa" id="hI1-uV-XhV"/>
+                        <outlet property="applyFeelbl" destination="LhM-En-en0" id="TiX-As-oEP"/>
+                        <outlet property="applyIngView" destination="J2m-L0-kjD" id="6O6-kg-t4e"/>
+                        <outlet property="applyStartView" destination="O2N-A1-wex" id="tyN-XG-sLk"/>
+                        <outlet property="applyStateLbl" destination="iSj-NQ-wNJ" id="Tga-NY-0cm"/>
+                        <outlet property="attendenceLbl" destination="zFt-fi-Bkf" id="JvU-Q4-QIy"/>
+                        <outlet property="contentLbl" destination="lRO-Ox-rlk" id="2es-nz-Ldk"/>
+                        <outlet property="issuerLbl" destination="7lY-np-gsF" id="CqF-Dz-izT"/>
+                        <outlet property="phoneBtn" destination="EG2-lA-5s4" id="h7a-I0-hee"/>
+                        <outlet property="timeLbl" destination="duj-AE-GZw" id="XZZ-0R-j8n"/>
+                        <outlet property="typeLbl" destination="4tf-pc-Ul9" id="M9B-OQ-92d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ykb-y5-w39" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

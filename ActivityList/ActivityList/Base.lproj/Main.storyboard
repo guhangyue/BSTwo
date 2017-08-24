@@ -237,7 +237,7 @@
                 <viewControllerPlaceholder storyboardName="Detail" id="fev-wz-gwX" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9qN-f3-sOE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1051" y="133"/>
+            <point key="canvasLocation" x="1026" y="166"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IUR-RH-Xuv">

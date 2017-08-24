@@ -21,6 +21,7 @@
     }*/
     //以上代码等同于以下代码
     if (self){
+        _activityId=[Utilities nullAndNilCheck:dict[@"id"] replaceBy:@"0"];
     self.imgUrl = [dict[@"imgUrl"] isKindOfClass:[NSNull class]] ? @"" : dict[@"imgUrl"];
     
     self.name = [dict[@"name"] isKindOfClass:[NSNull class]] ? @"活动" : dict[@"name"];
@@ -32,6 +33,7 @@
     self.unReliableNumber = [dict[@"unReliableNumber"] isKindOfClass:[NSNull class]] ? 0 :[dict[@"unReliableNumber"] integerValue];
     
     self.isFavo = [dict[@"isFavo"] isKindOfClass:[NSNull class]] ? NO: [dict[@"isFavo"] boolValue];
+        
     }
     
     return self;
