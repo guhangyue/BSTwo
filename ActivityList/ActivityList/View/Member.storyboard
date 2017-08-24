@@ -48,16 +48,27 @@
                                     <action selector="signinAction:forEvent:" destination="bp5-ex-2VD" eventType="touchUpInside" id="Y9h-F5-f13"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwn-HW-C8G">
+                                <rect key="frame" x="80" y="384" width="215" height="30"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="注册"/>
+                                <connections>
+                                    <segue destination="jLI-xT-O4u" kind="show" id="aKj-O2-ebK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="hxU-v7-qGV" firstAttribute="leading" secondItem="zIr-Ji-Qit" secondAttribute="leading" constant="80" id="2iz-m6-8Dg"/>
+                            <constraint firstItem="fwn-HW-C8G" firstAttribute="trailing" secondItem="hxU-v7-qGV" secondAttribute="trailing" id="BYa-Vl-emH"/>
                             <constraint firstItem="hxU-v7-qGV" firstAttribute="top" secondItem="gKU-Yd-fjx" secondAttribute="bottom" constant="50" id="Emo-QL-82z"/>
                             <constraint firstItem="261-Fb-KHR" firstAttribute="leading" secondItem="zIr-Ji-Qit" secondAttribute="leading" constant="50" id="FLX-Ea-UTa"/>
+                            <constraint firstItem="fwn-HW-C8G" firstAttribute="leading" secondItem="hxU-v7-qGV" secondAttribute="leading" id="kIU-n3-547"/>
                             <constraint firstItem="gKU-Yd-fjx" firstAttribute="leading" secondItem="zIr-Ji-Qit" secondAttribute="leading" constant="50" id="leM-8o-Pah"/>
                             <constraint firstItem="gKU-Yd-fjx" firstAttribute="top" secondItem="261-Fb-KHR" secondAttribute="bottom" constant="30" id="ngy-2W-bR7"/>
                             <constraint firstAttribute="trailing" secondItem="gKU-Yd-fjx" secondAttribute="trailing" constant="50" id="phX-mV-H1G"/>
                             <constraint firstAttribute="trailing" secondItem="hxU-v7-qGV" secondAttribute="trailing" constant="80" id="prf-0U-vBw"/>
+                            <constraint firstItem="fwn-HW-C8G" firstAttribute="top" secondItem="hxU-v7-qGV" secondAttribute="bottom" constant="50" id="qvp-FE-Ig2"/>
                             <constraint firstItem="261-Fb-KHR" firstAttribute="top" secondItem="fZq-Ku-ohL" secondAttribute="bottom" constant="100" id="r8f-0z-2Ox"/>
                             <constraint firstAttribute="trailing" secondItem="261-Fb-KHR" secondAttribute="trailing" constant="50" id="xVc-jy-XtG"/>
                         </constraints>
@@ -66,7 +77,6 @@
                     <connections>
                         <outlet property="passWordtextword" destination="gKU-Yd-fjx" id="owC-zJ-aNj"/>
                         <outlet property="userNametextword" destination="261-Fb-KHR" id="EHF-MW-CpW"/>
-                        <segue destination="jLI-xT-O4u" kind="show" id="ek6-yY-ajg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ErF-8n-Bwe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -132,6 +142,7 @@
                                 </state>
                                 <connections>
                                     <action selector="registerAction:forEvent:" destination="hM7-vE-aJc" eventType="touchUpInside" id="1ri-zK-1d9"/>
+                                    <action selector="registrationBtn:forEvent:" destination="hM7-vE-aJc" eventType="touchUpInside" id="1cz-a9-SOv"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -165,6 +176,7 @@
                         <outlet property="confirmPwdTextField" destination="cJk-qd-W9g" id="omo-oz-yo5"/>
                         <outlet property="nickNameTextField" destination="n6N-mn-EAG" id="5nE-9p-dqB"/>
                         <outlet property="passWordTextField" destination="0dV-Vn-3Av" id="Mxx-A4-Yl1"/>
+                        <outlet property="registrationBtn" destination="TAx-cc-Jtl" id="fNb-Su-LvX"/>
                         <outlet property="userNameTextField" destination="An4-ZK-pog" id="ebI-Hk-2LT"/>
                         <outlet property="verificationTextField" destination="kDA-aY-KzW" id="xUh-AJ-hXz"/>
                     </connections>
@@ -325,7 +337,7 @@
                                         <rect key="frame" x="0.0" y="250" width="313" height="27"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jsW-B4-toG" id="ZFW-qC-xjS">
-                                            <rect key="frame" x="0.0" y="0.0" width="312.5" height="26.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="313" height="27"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
