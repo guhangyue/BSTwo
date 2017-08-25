@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface DetailViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *activityImgView;
@@ -36,6 +37,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self naviConfig];
+    [self uiLayout];
     // Do any additional setup after loading the view.
 }
 //每次来到该页面执行一次
@@ -77,7 +79,8 @@
          [_aiv stopAnimating];
        // NSLog(@"");
         if ([responseObject[@"resultFlag" ]integerValue]==8001) {
-            
+            NSDictionary *result =responseObject[@"result"];
+            _activity=[[ActivityModel alloc]initWithDetialDictionary:result];
         }else{
             
             NSString *errorMsg=[ErrorHandler getProperErrorString:[responseObject[@"resultFlag"]integerValue]];
@@ -88,6 +91,17 @@
         //业务逻辑失败的情况下
         [Utilities popUpAlertViewWithMsg:@"请保持网络连接畅通" andTitle:nil onView:self];
     }];
+}
+-(void)uiLayout{
+    [_activityImgView sd_setImageWithURL:[NSURL URLWithString:_activity.imgUrl] placeholderImage:[UIImage imageNamed:@"image"]];
+    _applyFeelbl.text=[NSString stringWithFormat:@"%@元",_activity.applyFee];
+    _attendenceLbl.text=[NSString stringWithFormat:@"%@/%@",_activity.attendence,_activity.limitation];
+    _typeLbl.text=_activity.type;
+    _issuerLbl.text=_activity.issuer;
+    
+    _addressLbl.text=_activity.address;
+    _contentLbl.text=_activity.content;
+    [_phoneBtn setTitle:[NSString stringWithFormat:@"联系活动发布者：%@",_activity.phone] forState:UIControlStateNormal];
 }
 /*
 #pragma mark - Navigation

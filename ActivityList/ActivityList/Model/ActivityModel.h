@@ -17,7 +17,19 @@
 @property (nonatomic) NSInteger reliableNumber;           //活动点赞数
 @property (nonatomic) NSInteger unReliableNumber;         //活动被踩数
 @property (nonatomic) BOOL isFavo;              //活动是否被收藏
+@property (strong, nonatomic) NSString *address;
+@property (strong, nonatomic) NSString *applyFee;
+@property (strong, nonatomic) NSString *attendence;
+@property (strong, nonatomic) NSString *type;
+@property (strong, nonatomic) NSString *issuer;
+@property (strong, nonatomic) NSString *phone;
+@property (strong, nonatomic) NSString *limitation;
+@property (nonatomic) NSTimeInterval dueTime;
+@property (nonatomic) NSTimeInterval startTime;
+@property (nonatomic) NSTimeInterval endTime;
+@property (nonatomic) NSInteger status;
+
 
 - (id)initWithDictionary: (NSDictionary *)dict;
-
+- (id)initWithDetialDictionary: (NSDictionary *)dict;
 @end
