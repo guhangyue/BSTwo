@@ -54,8 +54,8 @@
         self.reliableNumber = [dict[@"reliableNumber"] isKindOfClass:[NSNull class]] ? 0 :[dict[@"reliableNumber"] integerValue];
         
         self.unReliableNumber = [dict[@"unReliableNumber"] isKindOfClass:[NSNull class]] ? 0 :[dict[@"unReliableNumber"] integerValue];
-        _address=[Utilities nullAndNilCheck:dict[@"address"] replaceBy:@""];
-        _applyFee=[Utilities nullAndNilCheck:dict[@"applicationFee"] replaceBy:@"0"];
+        _address=[Utilities nullAndNilCheck:dict[@"address"] replaceBy:@"活动地址待定"];
+        _applyFee=[Utilities nullAndNilCheck:dict[@"applicationFee"] replaceBy:@""];
         _attendence=[Utilities nullAndNilCheck:dict[@"participantsNumber"] replaceBy:@"0"];
         _type=[Utilities nullAndNilCheck:dict[@"categoryName"] replaceBy:@"普通活动"];
         _issuer=[Utilities nullAndNilCheck:dict[@"issuerName"] replaceBy:@"未知发布者"];

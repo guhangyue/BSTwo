@@ -14,7 +14,6 @@
         <!--Detail View Controller-->
         <scene sceneID="GAp-ol-S7y">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ykb-y5-w39" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="gXu-iz-eed" customClass="DetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3Uy-hw-j5x"/>
@@ -104,7 +103,7 @@
                                         <rect key="frame" x="0.0" y="495" width="375" height="65"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YBF-39-EKG">
-                                                <rect key="frame" x="0.0" y="0.5" width="94" height="65"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="94" height="65"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O2N-A1-wex">
                                                         <rect key="frame" x="35" y="10.5" width="25" height="25"/>
@@ -135,7 +134,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jf9-uA-hj0">
-                                                <rect key="frame" x="94" y="0.5" width="93.5" height="65"/>
+                                                <rect key="frame" x="94" y="0.0" width="93.5" height="65"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AjB-rh-evC">
                                                         <rect key="frame" x="33.5" y="10.5" width="25" height="25"/>
@@ -166,7 +165,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QrI-rr-J0O">
-                                                <rect key="frame" x="187.5" y="0.5" width="94" height="65"/>
+                                                <rect key="frame" x="187.5" y="0.0" width="94" height="65"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J2m-L0-kjD">
                                                         <rect key="frame" x="35" y="10.5" width="25" height="25"/>
@@ -197,7 +196,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sy3-EF-GQQ">
-                                                <rect key="frame" x="281.5" y="0.5" width="93.5" height="65"/>
+                                                <rect key="frame" x="281.5" y="0.0" width="93.5" height="65"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ss5-Tf-HRa">
                                                         <rect key="frame" x="33.5" y="10.5" width="25" height="25"/>
@@ -316,6 +315,9 @@
                                     <constraint firstItem="Qd7-M1-u8C" firstAttribute="top" secondItem="EG2-lA-5s4" secondAttribute="bottom" constant="5" id="r5o-K5-G8N"/>
                                     <constraint firstItem="PIW-he-5jy" firstAttribute="top" secondItem="XAk-Fd-Kht" secondAttribute="top" id="ri5-5c-9qd"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="gXu-iz-eed" id="8yf-p8-3B1"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -346,13 +348,14 @@
                         <outlet property="typeLbl" destination="4tf-pc-Ul9" id="M9B-OQ-92d"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ykb-y5-w39" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="253.59999999999999" y="-63.418290854572717"/>
         </scene>
         <!--Purchace Table View Controller-->
         <scene sceneID="wg5-FH-sLB">
             <objects>
-                <tableViewController id="PnU-JO-EOR" customClass="PurchaceTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="Purchase" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PnU-JO-EOR" customClass="PurchaceTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="rf4-aC-XeX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -372,6 +375,7 @@
                             <outlet property="delegate" destination="PnU-JO-EOR" id="X89-cB-fLh"/>
                         </connections>
                     </tableView>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eOt-bi-oyA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
