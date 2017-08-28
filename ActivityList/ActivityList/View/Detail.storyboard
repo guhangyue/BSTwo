@@ -356,17 +356,60 @@
         <scene sceneID="wg5-FH-sLB">
             <objects>
                 <tableViewController storyboardIdentifier="Purchase" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PnU-JO-EOR" customClass="PurchaceTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="rf4-aC-XeX">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="rf4-aC-XeX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="EiS-l1-dvk">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="活动名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbk-9h-eqr">
+                                    <rect key="frame" x="15" y="20" width="77.5" height="23"/>
+                                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="19"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="活动内容" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYI-2E-gCa">
+                                    <rect key="frame" x="15" y="58" width="345" height="18"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="总价" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBy-gx-Aac">
+                                    <rect key="frame" x="15" y="91" width="67" height="39.5"/>
+                                    <fontDescription key="fontDescription" type="system" weight="black" pointSize="33"/>
+                                    <color key="textColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="tbk-9h-eqr" firstAttribute="top" secondItem="EiS-l1-dvk" secondAttribute="top" constant="20" id="E7J-kt-IwP"/>
+                                <constraint firstItem="sBy-gx-Aac" firstAttribute="leading" secondItem="tbk-9h-eqr" secondAttribute="leading" id="NtZ-AD-a23"/>
+                                <constraint firstItem="sBy-gx-Aac" firstAttribute="top" secondItem="FYI-2E-gCa" secondAttribute="bottom" constant="15" id="ce4-4Q-7pe"/>
+                                <constraint firstItem="tbk-9h-eqr" firstAttribute="leading" secondItem="EiS-l1-dvk" secondAttribute="leading" constant="15" id="gKI-8V-Su3"/>
+                                <constraint firstItem="FYI-2E-gCa" firstAttribute="leading" secondItem="tbk-9h-eqr" secondAttribute="leading" id="hEQ-Q1-e5G"/>
+                                <constraint firstItem="FYI-2E-gCa" firstAttribute="top" secondItem="tbk-9h-eqr" secondAttribute="bottom" constant="15" id="hvd-Nb-aVc"/>
+                                <constraint firstAttribute="trailing" secondItem="FYI-2E-gCa" secondAttribute="trailing" constant="15" id="v35-uC-t6c"/>
+                            </constraints>
+                        </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="dQ2-fE-ggt">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PayCell" textLabel="6No-2e-x50" style="IBUITableViewCellStyleDefault" id="dQ2-fE-ggt">
+                                <rect key="frame" x="0.0" y="178" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dQ2-fE-ggt" id="avP-t6-5pz">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="银行" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6No-2e-x50">
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -376,6 +419,11 @@
                         </connections>
                     </tableView>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="contenLabel" destination="FYI-2E-gCa" id="YyH-LG-gac"/>
+                        <outlet property="nameLabel" destination="tbk-9h-eqr" id="ABC-mY-ihD"/>
+                        <outlet property="priceLabel" destination="sBy-gx-Aac" id="M3R-oc-4gi"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eOt-bi-oyA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
